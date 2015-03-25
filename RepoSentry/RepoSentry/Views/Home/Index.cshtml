@@ -1,0 +1,58 @@
+﻿@model IEnumerable<RepoSentry.Models.DadosRastreio>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <title>Código de rastreio</title>
+</head>
+<body>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.dataAbertura)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.codRastreio)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ultimaSituacao)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.contratos)
+                    </th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="active">
+                        
+                        <td>
+                            @Html.DisplayFor(modelItem => item.dataAbertura)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.codRastreio)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ultimaSituacao)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.contratos)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        </div>
+</body>
+</html>
